@@ -4,8 +4,8 @@ Based on a youtube tutorial, what I did new is using **CLASSES** instead of **Ob
 ```javascript
 class Person {
     constructor(strName, numAge) {
-        this.name = strName;
-        this.age = numAge;
+        this.name = strName
+        this.age = numAge
     }
 
     info() {
@@ -13,8 +13,8 @@ class Person {
     }
 }
 
-let objPerson = new Person("Ali",33);
-console.log(objPerson.info());
+let objPerson = new Person("Ali",33)
+console.log(objPerson.info())
 ```
 
 ### Instead of this
@@ -26,8 +26,8 @@ function Person(name){
     return `((Object::Person) named ${this.name} & of age ${this.age})`
   } 
 } 
-let objPerson = new Person("Bob",44);
-console.log(objPerson.info());
+let objPerson = new Person("Bob",44)
+console.log(objPerson.info())
 ```
 
 
