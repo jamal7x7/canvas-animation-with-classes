@@ -30,9 +30,4 @@ let objPerson = new Person("Bob",44);
 console.log(objPerson.info());
 ```
 
-# H1
-## H2
-###H3
-#### H4
-##### H5
-###### H6
+
