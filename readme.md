@@ -1,6 +1,6 @@
-##Canvas animation using ES2015 Classes
+# Canvas animation using ES2015 Classes
 Based on a youtube tutorial, what I did new is using **CLASSES** instead of **Object with function Constructor**.
-###This
+### This
 ```javascript
 class Person {
     constructor(strName, numAge) {
@@ -17,7 +17,7 @@ let objPerson = new Person("Ali",33);
 console.log(objPerson.info());
 ```
 
-###Instead of this
+### Instead of this
 ```javascript
 function Person(name){
   this.name = strName
@@ -29,3 +29,10 @@ function Person(name){
 let objPerson = new Person("Bob",44);
 console.log(objPerson.info());
 ```
+
+# H1
+## H2
+###H3
+#### H4
+##### H5
+###### H6
