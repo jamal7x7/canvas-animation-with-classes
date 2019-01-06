@@ -8,13 +8,17 @@ const c = canvas.getContext('2d')
 const g ="#00FF00" 
 const b ="#00fff0" 
 
+const colorArray = [g, b, 'tomato', 'purple', 'yellow', 'pink']
+ 
+
+
 const mouse = {
     x: undefined,
     y: undefined
 }
 
-const maxRadius = 40
-const minRadius = 4
+const maxRadius = 50
+const minRadius = 15
 
 addEventListener('mousemove', e => {
     mouse.x = e.clientX
@@ -25,12 +29,13 @@ addEventListener('mousemove', e => {
 })
 
 class Circle {
-    constructor(x, y, r, dx, dy) {
+    constructor(x, y, r, dx, dy, color) {
         this.x = x
         this.y = y
         this.r = r
         this.dx = dx
         this.dy = dy
+        this.color = color
     }
 
     info() {
@@ -40,7 +45,7 @@ class Circle {
     }
 
     draw() {
-        c.fillStyle = g
+        c.fillStyle = this.color
         c.beginPath()
         c.arc(this.x, this.y, this.r, 0, 2*Math.PI, false)
         c.fill()  
@@ -59,12 +64,12 @@ class Circle {
         if ( d < 100)  {
             let a = this.r
             if(this.r < maxRadius) {
-                this.r += 1
+                this.r += 10
             }
 
         } else {
             if (this.r > minRadius) {
-                this.r -=1
+                this.r -=10
             } 
         }
     
@@ -75,13 +80,14 @@ class Circle {
 }
 
 let circleArray = []
-for (let i=0; i < 600; i++) {
+for (let i=0; i < 200; i++) {
     let r = 30 * Math.random()
     let x = (innerWidth - 2*r) * Math.random() + r
     let y = (innerHeight - 2*r) * Math.random() + r
-    let dx = 4 * Math.random()  
-    let dy = 4 * Math.random() 
-    circleArray = [...circleArray, new Circle(x,y,r,dx,dy)] 
+    let dx = 3 * Math.random()  
+    let dy = 3 * Math.random() 
+    let color = colorArray[Math.round(Math.random()*6 )]
+    circleArray = [...circleArray, new Circle(x,y,r,dx,dy, color)] 
 }
 
 const animate = () => {
